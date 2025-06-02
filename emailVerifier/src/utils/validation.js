@@ -1,8 +1,6 @@
 const validator = require("validator");
 const psl = require('psl');
 
-
-
 const isEmailFormatValid = (req) => {
 
     // postman se bheje huye email ko extract kar liya
