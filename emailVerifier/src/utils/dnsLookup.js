@@ -13,23 +13,21 @@ const dnsCheck = async (mainDomain, fromEmail, toEmail) => {
         // mx records extract karo
         // console.log(records);
 
-        // mx records ko priority wise sort kro
-        records.sort((a, b) => a.priority - b.priority);
-
         // let's say mx record exist karta hai
 
         if (records.length > 0) {
-
+            // mx records ko priority wise sort kro
+            records.sort((a, b) => a.priority - b.priority);
             const primaryHost = records[0].exchange;
             smtpHandshake(primaryHost, fromEmail, toEmail);
 
         }
 
         else {
-            console.log("email is invalid");
+            throw new Error("email is invalid");
         }
     } catch (error) {
-        console.log("email is invalid");
+        console.log("error aa gya", error.message);
     }
 
 
