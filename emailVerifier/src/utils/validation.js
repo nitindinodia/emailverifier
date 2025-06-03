@@ -1,7 +1,7 @@
 const validator = require("validator");
 const psl = require('psl');
 
-const isEmailFormatValid = (req) => {
+const checkEmailFormatAndGetMainDomain = (req) => {
 
     // postman se bheje huye email ko extract kar liya
     const { email } = req.body;
@@ -25,6 +25,6 @@ const isEmailFormatValid = (req) => {
 
 }
 
-module.exports = isEmailFormatValid;
+module.exports = checkEmailFormatAndGetMainDomain;
 
 

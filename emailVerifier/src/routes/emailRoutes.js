@@ -5,3 +5,7 @@ const verifyEmail = require("../controllers/emailController");
 emailVerifyRouter.post("/", verifyEmail);
 
 module.exports = emailVerifyRouter;
+
+
+
+

@@ -4,16 +4,17 @@
 const disposableDomains = require("disposable-email-domains");
 const disposableSet = new Set(disposableDomains);
 
-const disposableCheck = (mainDomain)=>{
+const isDisposableEmail = (mainDomain)=>{
 
-    console.log(mainDomain);
+    // console.log(mainDomain);
 
     if(disposableSet.has(mainDomain)){
         throw new Error("disposable email");
     }
-
+    
+    return true;
     // console.log(disposableSet.size); // 121570
 
 }
 
-module.exports = disposableCheck;
+module.exports = isDisposableEmail;

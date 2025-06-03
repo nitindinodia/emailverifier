@@ -19,6 +19,9 @@ const dnsCheck = async (mainDomain, fromEmail, toEmail) => {
             // mx records ko priority wise sort kro
             records.sort((a, b) => a.priority - b.priority);
             const primaryHost = records[0].exchange;
+            // return primaryHost;
+
+            // ab hum smtpHandshake karenge
             smtpHandshake(primaryHost, fromEmail, toEmail);
 
         }
@@ -34,3 +37,5 @@ const dnsCheck = async (mainDomain, fromEmail, toEmail) => {
 }
 
 module.exports = dnsCheck;
+
+
